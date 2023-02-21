@@ -6,7 +6,7 @@ const embedMessage = new EmbedBuilder()
   .addFields(
     { name: '\u200B', value: '\u200B' },
     {
-      name: '$ git init [nome-do-projeto]',
+      name: '$ git init [name]',
       value: 'Cria um novo repositório local com um nome especificado',
       inline: true,
     },
@@ -28,12 +28,12 @@ const embedMessage = new EmbedBuilder()
       inline: true,
     },
     {
-      name: '$ git add [arquivo]',
+      name: '$ git add [file]',
       value: 'Faz o snapshot de um arquivo na preparação para versionamento',
       inline: true,
     },
     {
-      name: '$ git commit -m "[mensagem]"',
+      name: '$ git commit -m "[message]"',
       value:
         'Grava o snapshot permanentemente do arquivo no histórico de versão',
       inline: true,
@@ -45,19 +45,19 @@ const embedMessage = new EmbedBuilder()
       inline: true,
     },
     {
-      name: '$ git branch [nome-branch]',
+      name: '$ git branch [branch-name]',
       value: 'Cria uma nova branch',
       inline: true,
     },
     {
-      name: '$ git switch -c [nome-branch]',
+      name: '$ git switch -c [branch-name]',
       value:
         'Muda para a branch especificada e atualiza o diretório de trabalho',
       inline: true,
     },
     { name: '\u200B', value: '\u200B' },
     {
-      name: '$ git merge [nome-branch]',
+      name: '$ git merge [branch-name]',
       value: 'Combina o histórico da branch especificada a branch atual',
       inline: true,
     },

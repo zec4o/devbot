@@ -39,18 +39,26 @@ client.login(TOKEN)
 // Listener de interações do bot.
 client.on(Events.InteractionCreate, async (interaction) => {
 
-  if (interaction.isStringSelectMenu()){
-    const selected = interaction.values[0]
-    if (selected == "javascript"){
-        await interaction.reply("Documentação do Javascript: https://developer.mozilla.org/en-US/docs/Web/JavaScript")
-    } else if (selected == "python"){
-        await interaction.reply("Documentação do Python: https://www.python.org")
-    } else if (selected == "csharp"){
-        await interaction.reply("Documentação do C#: https://learn.microsoft.com/en-us/dotnet/csharp/")
-    } else if (selected == "discordjs"){
-        await interaction.reply("Documentação do Discord.js: https://discordjs.guide/#before-you-begin")
+  if (interaction.isStringSelectMenu()) {
+    const selected = interaction.values[0];
+    switch (selected) {
+      case "javascript":
+        await interaction.reply(`Documentation for ${selected}: https://developer.mozilla.org/en-US/docs/Web/JavaScript`);
+        break;
+      case "python":
+        await interaction.reply(`Documentation for ${selected}: https://www.python.org/doc/`);
+        break;
+      case "csharp":
+        await interaction.reply(`Documentation for ${selected}: https://learn.microsoft.com/en-us/dotnet/csharp/`);
+        break;
+      case "discordjs":
+        await interaction.reply(`Documentation for ${selected}: https://discordjs.guide/#before-you-begin`);
+        break;
+      default:
+        break;
     }
-}
+  }
+  
 
   if (!interaction.isChatInputCommand()) return
   const command = interaction.client.commands.get(interaction.commandName)

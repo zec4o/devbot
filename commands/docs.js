@@ -5,7 +5,7 @@ const row = new ActionRowBuilder()
     .addComponents(
         new StringSelectMenuBuilder()
             .setCustomId("select")
-            .setPlaceholder("Nenhuma linguagem selecionada")
+            .setPlaceholder("Selecione uma linguagem")
             .addOptions({
                 label: "javascript",
                 description: "Veja a documentação de Javascript",
@@ -35,6 +35,6 @@ module.exports = {
         .setDescription("Acesse a documentação da tecnologia que quiser"),
 
     async execute(interaction) {
-        await interaction.reply({content: "Selecione uma das techs abaixo:", components: [row]})
+        await interaction.reply({content: "Selecione uma das tecnologias abaixo:", components: [row]})
     }
 }
